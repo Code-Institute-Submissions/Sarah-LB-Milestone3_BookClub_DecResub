@@ -83,7 +83,8 @@ This is a book review amd recommendation site. It is designed to be responsive a
     - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
 1. Flask
 1. MongoDB
-1. Materialise
+1. [Materialise:](https://materializecss.com/)
+1. [Werkzeug:](https://werkzeug.palletsprojects.com/en/2.1.x/) for security features. hashing passwords to add security
 
 ## Testing
 
