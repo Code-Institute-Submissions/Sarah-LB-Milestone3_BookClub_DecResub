@@ -5,3 +5,7 @@
 .flashes h4 {
     line-height: 1.5;
 }
+
+.book_panel h4, .book_panel span{
+    font-size: medium;
+}
