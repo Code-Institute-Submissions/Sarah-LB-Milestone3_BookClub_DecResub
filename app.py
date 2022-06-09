@@ -23,7 +23,7 @@ mongo= PyMongo(app)
 @app.route("/")
 @app.route("/get_books")
 def get_books():
-    books = mongo.db.books.find()
+    books = list(mongo.db.books.find())
     return render_template("books.html", books=books)
 
 
@@ -37,6 +37,10 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
+
+        if request.form['password'] != request.form['confirm_password']:
+                flash("Passwords do not match")
+                return redirect(url_for("register"))
 
         register = {
             "username": request.form.get("username").lower(),

@@ -1,12 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for book in books %}
-        {{book.book_title }}<br>
-        {{book.book_author }}<br>
-        {{book.book_genre }}<br>
-        {{book.book_description }}<br>
 
-    {% endfor %}
+    <div class="row book_panel">
+      {% for book in books %}
+      <div class="col s12 m5">
+        <div class="card-panel amber lighten-5">
+          <div class="row">
+            <a href="#">
+              <img src="#" alt="Book Cover">
+            </a>
+          </div>
+          <div class = "row">
+            <h4 class="col s12">{{book.book_title }}</h4>
+          </div>
+          <div class = "row">
+            <h4 class="col s12">by {{book.book_author }}</h4>
+          </div>
+          <div class = "row">
+            <h4 class="col s12">Genre: {{book.book_genre }}</h4>
+          </div>
+          <div class = "row">
+            <h4 class="col s12">Rating:</h4>
+          </div>
+          <span class="black-text">{{book.book_description }}
+          </span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
 
 {% endblock %}

@@ -18,12 +18,21 @@
         <!-- Password -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-user-lock prefix amber-text"></i>
+                <i class="fas fa-lock prefix amber-text"></i>
                 <input id="password" name="password" type="password" minlength="5"
                 maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
+         <!-- Confirm password -->
+         <div class="row">
+          <div class="input-field col s12">
+              <i class="fas fa-lock prefix amber-text"></i>
+              <input id="confirm_password" name="confirm_password" type="password" minlength="5"
+              maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+              <label for="confirm_password">Confirm password</label>
+          </div>
+      </div>
         <!-- Register Button -->
         <div class="row">
             <button type="submit" class="col s8 offset-s2 btn-large amber lighten-3 text-shadow">

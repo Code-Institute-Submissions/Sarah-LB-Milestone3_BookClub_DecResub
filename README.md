@@ -85,6 +85,7 @@ This is a book review amd recommendation site. It is designed to be responsive a
 1. MongoDB
 1. [Materialise:](https://materializecss.com/)
 1. [Werkzeug:](https://werkzeug.palletsprojects.com/en/2.1.x/) for security features. hashing passwords to add security
+1. google books API
 
 ## Testing
 
@@ -219,6 +220,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 -   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
+
+- Code Institute mini project
+
 
 ### Content
 
