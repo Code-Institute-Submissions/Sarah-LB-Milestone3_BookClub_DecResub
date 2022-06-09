@@ -223,6 +223,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - Code Institute mini project
 
+-   [Rate Yo](https://rateyo.fundoocode.ninja/) for star rating
+
 
 ### Content
 
