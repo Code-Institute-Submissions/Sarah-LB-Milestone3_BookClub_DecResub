@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h3 class="amber-text center-align">Find a Book</h3>
 
     <div class="row book_panel">
       {% for book in books %}
@@ -23,8 +24,14 @@
           <div class = "row">
             <h4 class="col s12"><strong>Rating:</strong></h4>
           </div>
-          <span class="black-text">{{book.book_description }}
+          <div class="row">
+          <span class="black-text col s12">{{book.book_description }}
           </span>
+          </div>
+          <div class="row">
+            <p class="black-text col s12"><em>Review by: {{ book.created_by }}</em>
+            </p>
+            </div>
         </div>
       </div>
       {% endfor %}
