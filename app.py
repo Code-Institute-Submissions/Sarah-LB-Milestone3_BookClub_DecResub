@@ -27,6 +27,11 @@ def get_books():
     return render_template("books.html", books=books)
 
 
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -91,6 +96,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
+        books = list(mongo.db.books.find())
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
