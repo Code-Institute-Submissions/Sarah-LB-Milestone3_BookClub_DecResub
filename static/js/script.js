@@ -4,7 +4,9 @@ $(document).ready(function(){
       rating: 1.5,
       halfStar: true
     });
-    $("#rateYo").rateYo("rating");
+    $("#rateYo").click(function(){
+        $("#rating").val($("#rateYo").rateYo("rating"));
+    });
     $('select').formSelect();
 
     validateMaterializeSelect();

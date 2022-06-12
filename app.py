@@ -116,10 +116,11 @@ def add_book():
         book = {
             "book_title": request.form.get("book_title"),
             "book_author": request.form.get("book_author"),
-            "genre": request.form.get("genre"),
-            "rating":request.form.get("rateYo"),
+            "genre": request.form.getlist("genre[]"),
+            "rating":request.form.get("rating"),
             "book_description": request.form.get("book_description"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "book_cover": request.form.get("book_cover")
         }
         mongo.db.books.insert_one(book)
         flash("Book Review Successfully Added")

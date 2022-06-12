@@ -6,12 +6,20 @@
     line-height: 1.5;
 }
 
-.book_panel h4, .book_panel span {
-    font-size: medium;
+.book_panel h4 {
+    font-size: 20px;
+}
+
+.book_panel h5 {
+    font-size: 16px;
 }
 
 .book_cover {
     max-width: 75%;
     max-height: 150px;
     object-fit: contain;
+}
+
+.book-teaser {
+    height: 420px;
 }
