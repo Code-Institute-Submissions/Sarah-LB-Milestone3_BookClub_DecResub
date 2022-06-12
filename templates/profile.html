@@ -3,41 +3,31 @@
 
     <h3 class="amber-text center-align">{{ username|capitalize }}'s Profile</h3>
 
-    <div class="row profile_book_panel">
-      {% for book in books %}
-        {% if session.user.lower() == books.created_by() %}
-      <div class="col s12 m5">
-        <div class="card-panel amber lighten-5">
-          <div class="row">
-            <a href="#">
-              <img src="#" alt="Book Cover">
-            </a>
-          </div>
-          <div class = "row">
-            <h4 class="col s12"><strong>{{book.book_title }}</strong></h4>
-          </div>
-          <div class = "row">
-            <h4 class="col s12"><strong>by {{book.book_author }}</strong></h4>
-          </div>
-          <div class = "row">
-            <h4 class="col s12"><strong>Genre: {{book.book_genre }}</strong></h4>
-          </div>
-          <div class = "row">
-            <h4 class="col s12"><strong>Rating:</strong></h4>
-          </div>
-          <div class="row">
-          <span class="black-text col s12">{{book.book_description }}
-          </span>
-          </div>
-          <div class="row">
-            <p class="black-text col s12"><em>Review by: {{ book.created_by }}</em>
-            </p>
+    
+        <div class="row book_panel">
+          {% for user_book in user_books %}
+          <div class="col s12 m5">
+            <div class="card-panel amber lighten-5">
+              <div class="row">
+                <a href="#">
+                  <img src="#" alt="Book Cover">
+                </a>
+              </div>
+              <div class = "row">
+                <h4 class="col s12"><strong>{{user_book.book_title }}</strong></h4>
+              </div>
+              <div class = "row">
+                <h4 class="col s12"><strong>by {{user_book.book_author }}</strong></h4>
+              </div>
+              <div class = "row">
+                <h4 class="col s12"><strong>Genre: {{user_book.book_genre }}</strong></h4>
+              </div>
+              <div class = "row">
+                <h4 class="col s12"><strong>Rating:</strong></h4>
+              </div>
             </div>
+          </div>
+          {% endfor %}
         </div>
-      </div>
-      {% endif %}
-      {% endfor %}
-    </div>
-
- 
-  {% endblock %}
+    
+    {% endblock %}
