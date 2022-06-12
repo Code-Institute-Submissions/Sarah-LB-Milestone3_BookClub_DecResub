@@ -5,11 +5,11 @@
 
     <div class="row book_panel">
       {% for book in books %}
-      <div class="col s12 m5">
+      <div class="col s12 m4">
         <div class="card-panel amber lighten-5">
-          <div class="row">
+          <div class="row center">
             <a href="#">
-              <img src="#" alt="Book Cover">
+              <img src="{{book.book_cover }}" alt="Book Cover" class="book_cover">
             </a>
           </div>
           <div class = "row">
