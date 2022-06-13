@@ -9,7 +9,7 @@
         <div class="card-panel book-teaser amber lighten-5">
           <div class="row center">
             <a href="">
-              <img src="{{book.book_cover }}" alt="Book Cover" class="book_cover">
+              <img src="{{ book.book_cover }}" alt="Book Cover" class="book_cover">
             </a>
           </div>
           <div class = "row">
@@ -23,7 +23,15 @@
                 {% endif %} 
                 {% endfor %}
               </h5>
-              <h5>Rating: {{ book.rating }}/5</h5>
+            </div>
+          </div>
+          
+                      <!--rating-->
+          <div class="row star_rating">
+            <div class="input-field col s12">
+              <div class="col s2">Rating: </div>
+              <div id="rateYo" name="rateYo" class="amber-text  col s10"></div>
+              <input type="hidden" name="rating" id="rating" value="{{ book.rating }}">
             </div>
           </div>
       </div>
