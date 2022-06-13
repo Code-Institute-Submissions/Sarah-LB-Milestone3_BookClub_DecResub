@@ -128,11 +128,12 @@ def add_book():
 
     return render_template("add_book.html")
 
+@app.route("/edit_book/<book_id>", methods=["GET", "POST"])
+def edit_book(book_id):
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
 
-@app.route("/reviews")
-def reviews():
-    review_book = list(mongo.db.books.find())
-    return render_template("reviews.html")
+    return render_template("edit_book.html", book=book)
+
 
 
 if __name__ == "__main__":
