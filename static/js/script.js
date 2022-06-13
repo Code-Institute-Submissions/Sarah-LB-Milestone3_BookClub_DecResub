@@ -7,6 +7,7 @@ $(document).ready(function(){
     $("#rateYo").click(function(){
         $("#rating").val($("#rateYo").rateYo("rating"));
     });
+
     $('select').formSelect();
 
     validateMaterializeSelect();

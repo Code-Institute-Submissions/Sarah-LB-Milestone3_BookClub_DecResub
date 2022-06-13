@@ -128,6 +128,13 @@ def add_book():
 
     return render_template("add_book.html")
 
+
+@app.route("/reviews")
+def reviews():
+    review_book = list(mongo.db.books.find())
+    return render_template("reviews.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
