@@ -11,7 +11,7 @@
             <div class="input-field col s12">
               <i class="fas fa-book prefix amber-text"></i>
               <input id="book_title" name="book_title" minlength="5" maxlength="100"
-                  type="text" class="validate" required>
+                  value="{{ book.book_title}}" type="text" class="validate" required>
               <label for="book_title">Book Title</label>
             </div>
           </div>
@@ -21,7 +21,7 @@
             <div class="input-field col s12">
               <i class="fas fa-book prefix amber-text"></i>
               <input id="book_author" name="book_author" minlength="5" maxlength="100"
-                  type="text" class="validate" required>
+              value="{{ book.book_author}}" type="text" class="validate" required>
               <label for="book_author">Author</label>
             </div>
           </div>
@@ -31,7 +31,12 @@
             <div class="input-field col s12">
                 <i class="fas fa-book prefix amber-text"></i>
                 <select multiple id="genre" name="genre[]" class="validate" required>
-                  <option value="" disabled selected>Genre</option>
+                  <option value="" disabled>Genre</option>
+                  {% if book.genre %}
+                  {% for genre in book.genre %}
+                    <option value="{{ book.book_title }}" selected>{{ book.genre }}</option>
+                  {% endfor %}
+                  {% else %}
                   <optgroup label="Fiction:"></optgroup>
                       <option value="Children's fiction">Children's fiction</option>
                       <option value="Young Adult fiction">Young Adult fiction</option>
@@ -64,6 +69,7 @@
                       <option value="Religon & Spirituality">Religon & Spirituality</option>
                       <option value="Sport">Sport</option>
                     </optgroup>
+                    {% endif %}
                 </select>
             </div>
           </div>
@@ -83,7 +89,9 @@
             <div class="input-field col s12">
               <i class="fas fa-pencil-alt prefix amber-text"></i>
               <textarea id="book_description" name="book_description" minlength="5"
-                  maxlength="2000" class="materialize-textarea validate" required></textarea>
+                  maxlength="2000" class="materialize-textarea validate" required>
+                {{- book.book_description -}}
+                </textarea>
               <label for="book_description">Book Description</label>
             </div>
           </div>
@@ -93,7 +101,7 @@
             <div class="input-field col s12">
               <i class="fas fa-image prefix amber-text"></i>
               <input id="book_cover" name="book_cover" minlength="10" maxlength="250"
-                  type="text">
+              value="{{ book.book_cover}}" type="text">
               <label for="book_cover">Insert a url link to the book cover image (optional)</label>
             </div>
           </div>
