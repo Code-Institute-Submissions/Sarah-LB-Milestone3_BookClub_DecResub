@@ -156,7 +156,7 @@ def delete_book(book_id):
 
 @app.route("/reviews/<book_id>", methods=["GET", "POST"])
 def reviews(book_id):
-    book = mongo.db.tasks.find_one({"_id": ObjectId(book_id)})
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("reviews.html", book=book)
 
 
