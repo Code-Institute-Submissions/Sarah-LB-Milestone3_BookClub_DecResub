@@ -131,6 +131,19 @@ def add_book():
 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
+    if request.method == "POST":
+        submit = {
+            "book_title": request.form.get("book_title"),
+            "book_author": request.form.get("book_author"),
+            "genre": request.form.getlist("genre[]"),
+            "rating":request.form.get("rating"),
+            "book_description": request.form.get("book_description"),
+            "created_by": session["user"],
+            "book_cover": request.form.get("book_cover")
+        }
+        mongo.db.books.update_one({"_id": ObjectId(book_id)}, { "$set": submit })
+        flash("Book Review Successfully Updated")
+
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
 
     return render_template("edit_book.html", book=book)
