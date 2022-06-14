@@ -8,7 +8,7 @@
       <div class="col s12 m4">
         <div class="card-panel book-teaser amber lighten-5">
           <div class="row center">
-            <a href="">
+            <a href="{{ url_for('reviews', book_id=book._id) }}">
               <img src="{{ book.book_cover }}" alt="Book Cover" class="book_cover">
             </a>
           </div>

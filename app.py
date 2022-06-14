@@ -96,8 +96,8 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        user_books = list(mongo.db.books.find({"created_by": username}))
-        return render_template("profile.html", username=username, user_books=user_books)
+        books = list(mongo.db.books.find({"created_by": username}))
+        return render_template("profile.html", username=username, books=books)
 
     return redirect(url_for("login"))
 
@@ -145,7 +145,6 @@ def edit_book(book_id):
         flash("Book Review Successfully Updated")
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-
     return render_template("edit_book.html", book=book)
 
 
@@ -154,6 +153,11 @@ def delete_book(book_id):
     mongo.db.books.delete_one({"_id": ObjectId(book_id)})
     flash("Book Review Successfully Deleted")
     return redirect(url_for("profile", username=session["user"]))
+
+@app.route("/reviews/<book_id>", methods=["GET", "POST"])
+def reviews(book_id):
+    book = mongo.db.tasks.find_one({"_id": ObjectId(book_id)})
+    return render_template("reviews.html", book=book)
 
 
 if __name__ == "__main__":
