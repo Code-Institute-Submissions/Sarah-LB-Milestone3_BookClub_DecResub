@@ -149,6 +149,12 @@ def edit_book(book_id):
     return render_template("edit_book.html", book=book)
 
 
+@app.route("/delete_book/<book_id>")
+def delete_book(book_id):
+    mongo.db.books.delete_one({"_id": ObjectId(book_id)})
+    flash("Book Review Successfully Deleted")
+    return redirect(url_for("profile", username=session["user"]))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
