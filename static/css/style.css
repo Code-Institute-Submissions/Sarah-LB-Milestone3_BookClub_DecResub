@@ -1,10 +1,8 @@
-.text-shadow {
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
 .flashes h4 {
     line-height: 1.5;
 }
+
+/* ------------------------------------------------------------------------------Books.html*/
 
 .book_panel h4 {
     font-size: 20px;
@@ -23,3 +21,21 @@
 .book-teaser {
     height: 500px;
 }
+
+.page_title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+}
+
+/* ------------------------------------------------------------------------------Navbar*/
+
+.text-shadow {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-fixed {
+    margin-bottom: 40px;
+}
+
+
+

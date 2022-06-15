@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="card-panel book-teaser amber lighten-5">
+<div class="card-panel amber lighten-5">
   <h3 class="amber-text center-align"><strong>{{ book.book_title }}</strong></h3>
   <h3 class="amber-text center-align">by {{ book.book_author }}</h3>
 
   <div class="row center">
       <img src="{{ book.book_cover }}" alt="Book Cover" class="book_cover">
       <br>
-      <h5>Rating: {{ book.rating }}/5</h5>
+      <h5>Reviewer's Rating: {{ book.rating }}/5</h5>
+      <h5>Book Club Rating: {{ book.rating }}/5</h5>
   </div>
   <div class = "row">
     <div class="col s12">
@@ -25,8 +26,30 @@
 </div>
 
 <div class="row">
+  {% for review in reviews %}
+  {% if review.review_title == book.book_title %}
+    <!--Other user reviews-->
+    <div class="col s12 card-panel grey lighten-5">
+      <div class="row">
+        <h6 class="amber-text col s6"><strong>{{ review.review_by }}</strong></h6>
+          <!--rating-->
+        <div class="input-field col s6 star_rating">
+          <div id="rateYo" name="rateYo" class="amber-text"></div>
+          <input type="hidden" name="rating" id="rating" value="{{ review.rating }}">
+        </div>
+      </div>
+      <div class="row">
+        <p class="col s12">
+          {{ review.review_text }}
+        </p>
+      </div>
+    </div>
+  {% else %}
+    <div class="col s12"></div>
+  {% endif %}
+  {% endfor %}
   <!--Add your own review-->
-  <div class="col s6 card-panel grey lighten-5">
+  <div class="col s12 card-panel grey lighten-5">
   <h5 class="amber-text">Add your own review of {{ book.book_title }}</h5>
   <form class="col s12" method="POST" action="{{ url_for('reviews', book_id=book._id) }}">
       <!--rating-->
@@ -47,44 +70,19 @@
         <input class= "col s12" type="hidden" name="review_title" id="review_title" value="{{ book.book_title }}">
       </div>
 
-    <!--submit and cancel button--> 
-    <div class="row">
-      <div class="col s12 center-align">
-        <a href="{{ url_for('reviews', book_id=book._id) }}" class="btn-small red text-shadow">
-          Cancel <i class="fas fa-check-circle"></i>
-        </a>
-        <button class="btn-small waves-effect waves-light amber" type="submit">
-          Submit Review <i class="fas fa-times-circle"></i>
-        </button>
+      <!--submit and cancel button--> 
+      <div class="row">
+        <div class="col s12 center-align">
+          <a href="{{ url_for('reviews', book_id=book._id) }}" class="btn-small red text-shadow">
+            Cancel <i class="fas fa-check-circle"></i>
+          </a>
+          <button class="btn-small waves-effect waves-light amber" type="submit">
+            Submit Review <i class="fas fa-times-circle"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
-{% for review in reviews %}
-{% if review.review_title == book.book_title %}
-  <!--Other user reviews-->
-  <div class="col s6 card-panel grey lighten-5">
-    <div class="row">
-      <h6 class="amber-text col s6"><strong>{{ review.review_by }}</strong></h6>
-        <!--rating-->
-      <div class="input-field col s6 star_rating">
-        <div id="rateYo" name="rateYo" class="amber-text"></div>
-        <input type="hidden" name="rating" id="rating" value="{{ review.rating }}">
-      </div>
-    </div>
-    <div class="row">
-      <p class="col s12">
-        {{ review.review_text }}
-      </p>
-    </div>
-  </div>
-{% else %}
-  <div class="col s6">
-    <h6 class="amber-text">Read {{ book.book_title }}? Add your review to let others know what you thought!</h6>
+    </form>
   </div>
 </div>
-{% endif %}
-{% endfor %}
-
 
 {% endblock %}
