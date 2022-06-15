@@ -29,8 +29,8 @@ def get_books():
 
 @app.route("/home")
 def home():
-    random_book = mongo.db.books.aggregate([ { "$sample": { "size": 1 } } ])
-    return render_template("home.html", random_book=random_book)
+    book = mongo.db.books.aggregate([{"$sample": {"size": 1}}])
+    return render_template("home.html", book=book)
 
 
 @app.route("/search", methods=["GET", "POST"])
