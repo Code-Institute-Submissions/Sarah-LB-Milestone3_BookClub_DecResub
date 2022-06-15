@@ -1,15 +1,12 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $("#rateYo").rateYo({
-      rating: 1,
+      rating: 1.5,
       halfStar: true
     });
     $("#rateYo").click(function(){
         $("#rating").val($("#rateYo").rateYo("rating"));
-    });
-
-    $("#rateYo").rateYo("rating", $("#rating").val());
-  
+    });  
 
     $('select').formSelect();
 
