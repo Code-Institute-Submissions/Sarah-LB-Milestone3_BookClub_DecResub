@@ -32,6 +32,22 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template("books.html", books=books)
+
+
+@app.route("/profile_search", methods=["GET", "POST"])
+def profile_search():
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    profile_query = request.form.get("profile_query")
+    books = list(mongo.db.books.find({"$and": [{"$text": {"$search": profile_query}},
+                                                {"created_by": username}]}))
+    return render_template("profile.html", username=username, books=books)
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -156,8 +172,20 @@ def delete_book(book_id):
 
 @app.route("/reviews/<book_id>", methods=["GET", "POST"])
 def reviews(book_id):
+    if request.method == "POST":
+        comment = {
+            "review_text": request.form.get("review_text"),
+            "review_by": session["user"],
+            "review_title": request.form.get("review_title"),
+            "rating":request.form.get("rating")
+        }
+        mongo.db.reviews.insert_one(comment)
+        flash("Your review has been successfully added")
+
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("reviews.html", book=book)
+
+
 
 
 if __name__ == "__main__":

@@ -29,21 +29,24 @@
   <div class="col s6 card-panel grey lighten-5">
   <h5 class="amber-text">Add your own review of {{ book.book_title }}</h5>
   <form class="col s12" method="POST" action="{{ url_for('reviews', book_id=book._id) }}">
-    <div class="row">
-      <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
-        <label for="textarea1">Add your review</label>
-      </div>
-    </div>
-    <!--rating-->
+      <!--rating-->
     <div class="row star_rating">
       <div class="input-field col s12">
-        <i class="fas fa-star prefix amber-text"></i>
-        <div class="col s1 offset-s1">Rating: </div>
-        <div id="rateYo" name="rateYo" class="amber-text  col s10"></div>
+        <div id="rateYo" name="rateYo" class="amber-text"></div>
         <input type="hidden" name="rating" id="rating" value="0">
       </div>
     </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="review_text" name="review_text" minlength="5"
+          maxlength="2000" class="materialize-textarea validate" required></textarea>
+          <label for="review_text">Add your review</label>
+        </div>
+      </div>
+      <div class="row">
+        <input class= "col s12" type="hidden" name="review_title" id="review_title" value="{{ book.book_title }}">
+      </div>
+
     <!--submit and cancel button--> 
     <div class="row">
       <div class="col s12 center-align">
@@ -57,27 +60,30 @@
     </div>
   </form>
 </div>
+
+{% for review in reviews %}
   <!--Other user reviews-->
   <div class="col s6 card-panel grey lighten-5">
-    <h6 class="amber-text"><strong>Review by {{ book.created_by }}</strong></h6>
-    <form class="col s12" method="POST" action="{{ url_for('reviews', book_id=book._id) }}">
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Add your review</label>
-        </div>
+    <div class="row">
+      <h6 class="amber-text col s6"><strong></strong></h6>
+        <!--rating-->
+      <div class="input-field col s6 star_rating">
+        <div id="rateYo" name="rateYo" class="amber-text"></div>
+        <input type="hidden" name="rating" id="rating" value="">
       </div>
-      <!--rating-->
-      <div class="row star_rating">
-        <div class="input-field col s12">
-          <i class="fas fa-star prefix amber-text"></i>
-          <div class="col s1 offset-s1">Rating: </div>
-          <div id="rateYo" name="rateYo" class="amber-text  col s10"></div>
-          <input type="hidden" name="rating" id="rating" value="0">
-        </div>
-      </div>
-    </form>
     </div>
+    <div class="row">
+      <p class="col s12">
+        
+      </p>
+    </div>
+  </div>
+
+  <div class="col s6">
+    <h6 class="amber-text">Read this book? Add your review to let others know what you thought!</h6>
+  </div>
 </div>
+{% endfor %}
+
 
 {% endblock %}
