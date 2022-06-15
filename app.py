@@ -29,7 +29,8 @@ def get_books():
 
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    random_book = mongo.db.books.aggregate([ { "$sample": { "size": 1 } } ])
+    return render_template("home.html", random_book=random_book)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -91,7 +92,7 @@ def login():
                     flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
-                        "profile", username=session["user"]))
+                        "home"))
             else:
                 #invalid password match
                 flash("Incorrect Username and/or Password")
@@ -182,8 +183,9 @@ def reviews(book_id):
         mongo.db.reviews.insert_one(comment)
         flash("Your review has been successfully added")
 
+    reviews = list(mongo.db.reviews.find())
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    return render_template("reviews.html", book=book)
+    return render_template("reviews.html", book=book, reviews=reviews)
 
 
 

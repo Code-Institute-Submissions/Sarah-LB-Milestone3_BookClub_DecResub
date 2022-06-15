@@ -60,29 +60,30 @@
     </div>
   </form>
 </div>
-
 {% for review in reviews %}
+{% if review.review_title == book.book_title %}
   <!--Other user reviews-->
   <div class="col s6 card-panel grey lighten-5">
     <div class="row">
-      <h6 class="amber-text col s6"><strong></strong></h6>
+      <h6 class="amber-text col s6"><strong>{{ review.review_by }}</strong></h6>
         <!--rating-->
       <div class="input-field col s6 star_rating">
         <div id="rateYo" name="rateYo" class="amber-text"></div>
-        <input type="hidden" name="rating" id="rating" value="">
+        <input type="hidden" name="rating" id="rating" value="{{ review.rating }}">
       </div>
     </div>
     <div class="row">
       <p class="col s12">
-        
+        {{ review.review_text }}
       </p>
     </div>
   </div>
-
+{% else %}
   <div class="col s6">
-    <h6 class="amber-text">Read this book? Add your review to let others know what you thought!</h6>
+    <h6 class="amber-text">Read {{ book.book_title }}? Add your review to let others know what you thought!</h6>
   </div>
 </div>
+{% endif %}
 {% endfor %}
 
 
