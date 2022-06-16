@@ -9,16 +9,10 @@
       <img src="{{ book.book_cover }}" alt="Book Cover" class="book_cover">
       <br>
       <h5>Reviewer's Rating: {{ book.rating }}/5</h5>
-      <h5>Book Club Rating: {{ book.rating }}/5</h5>
   </div>
   <div class = "row">
     <div class="col s12">
-        <h5>Genre: {% for genre in book.genre %}
-          {{ genre }},
-          {% if loop.last %}
-            {{ genre }}
-          {% endif %} 
-          {% endfor %}
+        <h5>Genre: {{ book.genre }}
         </h5>
         <p class="flow-text">{{ book.book_description }}</p>
     </div>

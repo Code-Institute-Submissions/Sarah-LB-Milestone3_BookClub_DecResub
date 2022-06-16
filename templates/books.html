@@ -21,9 +21,9 @@
       </form>
     </div>
 
-    <div class="row book_panel">
+    <div class="row book_panel book-row">
       {% for book in books %}
-      <div class="col s12 m4">
+      <div class="col s12 m4 book-col">
         <div class="card-panel book-teaser amber lighten-5">
           <div class="row center">
             <a href="{{ url_for('reviews', book_id=book._id) }}">
@@ -34,12 +34,7 @@
             <div class="col s12">
               <h4>{{ book.book_title }}</h4>
               <h5>by {{ book.book_author }}</h5>
-              <h5>Genre: {% for genre in book.genre %}
-                {{ genre }},
-                {% if loop.last %}
-                  {{ genre }}
-                {% endif %} 
-                {% endfor %}
+              <h5>Genre: {{ book.genre }}
               </h5>
             </div>
           </div>
@@ -49,9 +44,8 @@
                         <div class="col s12">Reviewer's Rating: {{ book.rating }}/5</div>
                       </div>
             
-                      <div class="row">
-                        <div class="col s12">Book Club Rating: {{ book.rating }}/5</div>
-                      </div>
+       
+                      
       </div>
       </div>
       {% endfor %}

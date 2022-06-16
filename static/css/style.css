@@ -4,6 +4,7 @@
 
 /* ------------------------------------------------------------------------------Books.html*/
 
+
 .book_panel h4 {
     font-size: 20px;
 }
@@ -16,10 +17,6 @@
     max-width: 75%;
     max-height: 150px;
     object-fit: contain;
-}
-
-.book-teaser {
-    height: 520px;
 }
 
 .page_title {
@@ -41,11 +38,31 @@
     padding-left: 12px !important;
 }
 
-/* ------------------------------------------------------------------------------home.html*/
+/* ------------------------------------------------------------------------------Home.html*/
 
-.home_panel {
-    height: 250px;
+.panel-row {
+    display: flex;
 }
+
+/* ------------------------------------------------------------------------------Profile.html*/
+
+.book-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-teaser {
+    min-width: 100px;
+    padding: 10px;
+    flex-grow: 1;
+    margin: 10px;
+}
+
 
 /* ------------------------------------------------------------------------------Footer*/
 
