@@ -1,6 +1,6 @@
 <h1 align="center">Book Club</h1>
 
-[View the live project here.]()
+[View the live project here.](https://milestone3-book-club.herokuapp.com/)
 
 This is a book review amd recommendation site. It is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential users. Users can find inspiration for their next read by searching for books included in the Amazon database.  They can then add their own comments for those books to the Book Club database and rate it for future users' information.
 
@@ -88,6 +88,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+-   Lighthouse used for responsiveness, compatability, accessibility... etc
+-   [HTML formatter](https://webformatter.com/html)
 
 ### Testing User Stories from User Experience (UX) Section
 
