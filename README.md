@@ -86,8 +86,8 @@ This is a book review amd recommendation site. It is designed to be responsive a
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 -   Lighthouse used for responsiveness, compatability, accessibility... etc
 -   [HTML formatter](https://webformatter.com/html)
 
@@ -146,7 +146,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### Heroku
 
-The project was deployed to Heroku using the following steps...
+The project was deployed to Heroku using [this](https://devcenter.heroku.com/articles/git) method, summarized here...
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
 2. Log in to [Heroku](https://heroku.com/) and create your app.

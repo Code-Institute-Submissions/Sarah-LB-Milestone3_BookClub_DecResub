@@ -1,37 +1,33 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-    <h3 class="page_title amber-text center-align">Recommend a Book</h3>
+<h3 class="page_title amber-text center-align">Recommend a Book</h3>
 
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
-
-          <!--title-->
-          <div class="row">
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
+        <!--title-->
+        <div class="row">
             <div class="input-field col s12">
-              <i class="fas fa-book prefix amber-text"></i>
-              <input id="book_title" name="book_title" minlength="5" maxlength="100"
-                  type="text" class="validate" required>
-              <label for="book_title">Book Title</label>
+                <i class="fas fa-book prefix amber-text"></i>
+                <input id="book_title" name="book_title" minlength="5" maxlength="100" type="text" class="validate" required />
+                <label for="book_title">Book Title</label>
             </div>
-          </div>
+        </div>
 
-          <!--author-->
-          <div class="row">
+        <!--author-->
+        <div class="row">
             <div class="input-field col s12">
-              <i class="fas fa-book prefix amber-text"></i>
-              <input id="book_author" name="book_author" minlength="5" maxlength="100"
-                  type="text" class="validate" required>
-              <label for="book_author">Author</label>
+                <i class="fas fa-book prefix amber-text"></i>
+                <input id="book_author" name="book_author" minlength="5" maxlength="100" type="text" class="validate" required />
+                <label for="book_author">Author</label>
             </div>
-          </div>
+        </div>
 
-          <!--genre dropdown-->
-          <div class="row">
+        <!--genre dropdown-->
+        <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-book prefix amber-text"></i>
                 <select id="genre" name="genre[]" class="validate" required>
-                  <option value="" disabled selected>Genre</option>
+                    <option value="" disabled selected>Genre</option>
                     <option value="Children's fiction">Children's fiction</option>
                     <option value="Young Adult fiction">Young Adult fiction</option>
                     <option value="Adult fiction">Adult fiction</option>
@@ -62,46 +58,43 @@
                     <option value="Sport">Sport</option>
                 </select>
             </div>
-          </div>
+        </div>
 
-          <!--rating-->
-          <div class="row star_rating">
+        <!--rating-->
+        <div class="row star_rating">
             <div class="input-field col s12">
-              <i class="fas fa-star prefix amber-text"></i>
-              <div class="col s2 offset-s1">Your Rating: </div>
-              <div id="rateYo" name="rateYo" class="amber-text  col s9"></div>
-              <input type="hidden" name="rating" id="rating" value="0">
+                <i class="fas fa-star prefix amber-text"></i>
+                <div class="col s2 offset-s1">Your Rating:</div>
+                <div id="rateYo" name="rateYo" class="amber-text col s9"></div>
+                <input type="hidden" name="rating" id="rating" value="0" />
             </div>
-          </div>
-          
-          <!--book description-->
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="fas fa-pencil-alt prefix amber-text"></i>
-              <textarea id="book_description" name="book_description" minlength="5"
-                  maxlength="2000" class="materialize-textarea validate" required></textarea>
-              <label for="book_description">Book Description</label>
-            </div>
-          </div>
+        </div>
 
-          <!--link to a book cover image-->
-          <div class="row">
+        <!--book description-->
+        <div class="row">
             <div class="input-field col s12">
-              <i class="fas fa-image prefix amber-text"></i>
-              <input id="book_cover" name="book_cover" minlength="10" maxlength="250"
-                  type="text">
-              <label for="book_cover">Insert a url link to the book cover image (optional)</label>
+                <i class="fas fa-pencil-alt prefix amber-text"></i>
+                <textarea id="book_description" name="book_description" minlength="5" maxlength="2000" class="materialize-textarea validate" required></textarea>
+                <label for="book_description">Book Description</label>
             </div>
-          </div>
+        </div>
 
-          <!--submit button--> 
-          <div class="row">
+        <!--link to a book cover image-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-image prefix amber-text"></i>
+                <input id="book_cover" name="book_cover" minlength="10" maxlength="250" type="text" />
+                <label for="book_cover">Insert a url link to the book cover image (optional)</label>
+            </div>
+        </div>
+
+        <!--submit button-->
+        <div class="row">
             <div class="col s12 center-align">
-              <button class="btn waves-effect waves-light amber" type="submit">Submit
-              </button>
+                <button class="btn waves-effect waves-light amber" type="submit">Submit</button>
             </div>
-          </div>
-        </form>
-      </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
