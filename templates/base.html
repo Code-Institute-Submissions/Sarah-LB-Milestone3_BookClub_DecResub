@@ -1,110 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
-    <title>Book Club</title>
-</head>
-<body>
-
-    <header>
-        <div class="navbar-fixed">
-        <!--Main navbar along top of page-->
-            <nav class="nav-extended text-shadow indigo darken-2">
-                <div class="nav-wrapper">
-                    <a href="{{ url_for('home') }}" class="brand-logo amber-text">Book Club</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="{{ url_for('home') }}">Home</a></li>
-                        {% if session.user %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+            integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+            crossorigin="anonymous"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+        {% block styles %} {% endblock %}
+        <title>Book Club</title>
+    </head>
+    <body>
+        <header>
+            <div class="navbar-fixed">
+                <!--Main navbar along top of page-->
+                <nav class="nav-extended text-shadow indigo darken-2">
+                    <div class="nav-wrapper">
+                        <a href="{{ url_for('home') }}" class="brand-logo amber-text">Book Club</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            {% if session.user %}
                             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                             <li><a href="{{ url_for('get_books') }}">Find a Book</a></li>
                             <li><a href="{{ url_for('add_book') }}">Recommend a Book</a></li>
                             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                        {% else %}
+                            {% else %}
                             <li><a href="{{ url_for('login') }}">Log In</a></li>
                             <li><a href="{{ url_for('register') }}">Register</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </nav>
-        
-        <!--collapsible mobile navbar menu-->
-        <ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-blue-text text-darken-4"></h4></li>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('get_books') }}">Find a Book</a></li>
-                <li><a href="{{ url_for('add_book') }}">Recommend a Book</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
-            {% endif %}
-        </ul>
-    </div>
-    </header>
-
-    <section>
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="indigo lighten-3 center-align">{{ message }}</h4>
+                            {% endif %}
+                        </ul>
                     </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
+                </nav>
 
-    <main class="container">
-    {% block content %}
-    {% endblock %}
-    </main>
-
-    <footer class="page-footer indigo darken-2">
-        <div class="footer-copyright">
-            <div class="row container valign-wrapper">
-                <div class="col s6">
-                    © Copyright 2022 Book Club. All Rights Reserved
-                </div>
-                <ul class="col s6 list-inline right-align">
-                    <li>
-                        <a class="white-text" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://uk.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
-                    </li>
+                <!--collapsible mobile navbar menu-->
+                <ul class="sidenav" id="mobile-demo">
+                    <li><h4 class="center-align light-blue-text text-darken-4"></h4></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    {% if session.user %}
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a href="{{ url_for('get_books') }}">Find a Book</a></li>
+                    <li><a href="{{ url_for('add_book') }}">Recommend a Book</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
                 </ul>
             </div>
-        </div>
-      </footer>    
+        </header>
 
+        <section>
+            <!-- flash messages -->
+            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="row flashes">
+                <h4 class="indigo lighten-3 center-align">{{ message }}</h4>
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
-</body>
+        <main class="container">
+            {% block content %} {% endblock %}
+        </main>
+
+        <footer class="page-footer indigo darken-2">
+            <div class="footer-copyright">
+                <div class="row container valign-wrapper">
+                    <div class="col s6">
+                        © Copyright 2022 Book Club. All Rights Reserved
+                    </div>
+                    <ul class="col s6 list-inline right-align">
+                        <li>
+                            <a class="white-text" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="https://uk.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        {% block scripts %} {% endblock %}
+    </body>
 </html>
