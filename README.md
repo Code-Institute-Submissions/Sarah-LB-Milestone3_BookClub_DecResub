@@ -1,11 +1,8 @@
 <h1 align="center">Book Club</h1>
 
-[View the live project here.](https://codeinstitute.net)
+[View the live project here.]()
 
 This is a book review amd recommendation site. It is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential users. Users can find inspiration for their next read by searching for books included in the Amazon database.  They can then add their own comments for those books to the Book Club database and rate it for future users' information.
-
-
-<h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
 
 ## User Experience (UX)
 
@@ -34,19 +31,24 @@ This is a book review amd recommendation site. It is designed to be responsive a
 
 -   ### Design
     -   #### Colour Scheme
-        -   The two main colours used are Code Insititue red, and white.
+        -   The two main colours used are Amber and Indigo.  Amber is a warm and friendly colour, stimulating creativity.  This is balanced by the calmer and more intellectual feel of indigo.
     -   #### Typography
-        -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
+        -   The Indie Flower font is used for the main headings on eavh page of the site.  It is a friendly cursive font that embodies the relaxed nature of the Book Club.
     -   #### Imagery
-        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
+        -   It was important to keep imagery to a minimum to draw the users' focus to the book cover images.  Font awesome has been used throughout the site to make it easier to use/navigate.
 
 *   ### Wireframes
 
-    -   Home Page Wireframe - [View](https://github.com/)
-
-    -   Mobile Wireframe - [View](https://github.com/)
-
-    -   Contact Us Page Wireframe - [View](https://github.com/)
+    -   [Home page - logged out](static/images/Home%20(before%20logging%20in).png)
+    -   [Home page - logged in](static/images/Home%20(logged%20in).png)
+    -   [Book Review Template](static/images/Book%20review%20template%20(logged%20in).png)
+    -   [Edit Review](static/images/Edit%20book%20review%20and%20add%20comment_rating%20(logged%20in).png)
+    -   [Find A Book](static/images/Find%20a%20Book%20(logged%20in).png)
+    -   [Login](static/images/Log%20In%20(before%20logging%20in).png)
+    -   [Profile](static/images/Profile%20(logged%20in).png)
+    -   [Register](static/images/Register%20(before%20logging%20in).png)
+    -   [Submit a review 1](static/images/Submit%20a%20review%20page%201%20(logged%20in).png)
+    -   [Submit a review 2](static/images/Submit%20a%20review%20page%202%20(logged%20in).png)
 
 ## Features
 
@@ -60,39 +62,34 @@ This is a book review amd recommendation site. It is designed to be responsive a
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
--   JavaScript
--   Python
+-   [JavaScript](https://www.javascript.com/)
+-   [Python]https://www.python.org/)
 
 ### Frameworks, Libraries & Programs Used
 
-1. [Hover.css:](https://ianlunn.github.io/Hover/)
-    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
+    - Google fonts were used to import the 'Indie Flower' font into the style.css file which is used on all pages throughout the project.
 1. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 1. [jQuery:](https://jquery.com/)
-    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
+    - jQuery came with Materialize to make the navbar responsive but was also used for other functions in JavaScript.
 1. [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
-1. [Photoshop:](https://www.adobe.com/ie/products/photoshop.html)
-    - Photoshop was used to create the logo, resizing images and editing photos for the website.
 1. [Balsamiq:](https://balsamiq.com/)
-    - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
-1. Flask
-1. MongoDB
+    - Balsamiq was used to create the  during the design process.
+1. [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+1. [MongoDB](https://www.mongodb.com/)
 1. [Materialise:](https://materializecss.com/)
 1. [Werkzeug:](https://werkzeug.palletsprojects.com/en/2.1.x/) for security features. hashing passwords to add security
-1. google books API
 
 ## Testing
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -215,29 +212,23 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code
 
--   The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
+-    [Materialise:](https://materializecss.com/): Materialize Library used throughout the project.
 
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+-   The Code Institute study material was used heavily for inspiration, especially the mini project amd sample README.
 
--   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
-
-- Code Institute mini project
-
--   [Rate Yo](https://rateyo.fundoocode.ninja/) for star rating
+-   [Rate Yo](https://rateyo.fundoocode.ninja/) was used for the star ratings.
 
 
 ### Content
 
--   All content was written by the developer.
+-   All initial content was written by the developer but content will also be added by users.
 
 -   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 ### Media
 
--   All Images were created by the developer.
+-   Images are added to the database by users.
 
 ### Acknowledgements
 
--   My Mentor for continuous helpful feedback.
-
--   Tutor support at Code Institute for their support.
+-   Tutor support at Code Institute for their support and advice.
