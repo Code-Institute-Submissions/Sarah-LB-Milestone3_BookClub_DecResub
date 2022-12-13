@@ -136,11 +136,10 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
-### Known Bugs
+### Problems Encountered
 
--   On some mobile devices the Hero Image pushes the size of screen out more than any of the other content on the page.
-    -   A white gap can be seen to the right of the footer and navigation bar as a result.
--   On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
+-   The mobile navbar caused some issues.  The overlay on the dropdown menu was covering the screen content but also the menu itself so nothing could be selected.  I looked at changing the z-indexes but settled on moving the mobile unordered list outside of the div with a class of navbar-fixed.
+
 
 ## Deployment
 
@@ -194,7 +193,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -    [Materialise:](https://materializecss.com/): Materialize Library used throughout the project.
 
--   The Code Institute study material was used heavily for inspiration, especially the mini project amd sample README.
+-   The Code Institute study material was used heavily for inspiration, especially the mini project and sample README.
 
 -   [Rate Yo](https://rateyo.fundoocode.ninja/) was used for the star ratings.
 
