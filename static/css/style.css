@@ -37,12 +37,20 @@
     padding-left: 12px !important;
 }
 
+#mobile-demo li a{
+    z-index: 99;
+}
+
 /* ------------------------------------------------------------------------------Home.html*/
 
 .panel-row {
     display: flex;
 }
 
+.home_panel h4,
+.home_panel h5 {
+    padding: 0 20px 20px 20px;
+}
 
 /* ------------------------------------------------------------------------------Profile.html*/
 
