@@ -11,7 +11,7 @@
             crossorigin="anonymous"
             type="text/css"
         />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,22 +42,21 @@
                         </ul>
                     </div>
                 </nav>
-
-                <!--collapsible mobile navbar menu-->
-                <ul class="sidenav" id="mobile-demo">
-                    <li><h4 class="center-align light-blue-text text-darken-4"></h4></li>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('get_books') }}">Find a Book</a></li>
-                    <li><a href="{{ url_for('add_book') }}">Recommend a Book</a></li>
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %}
-                </ul>
             </div>
+            <!--collapsible mobile navbar menu-->
+            <ul class="sidenav" id="mobile-demo">
+                <li><h4 class="center-align light-blue-text text-darken-4"></h4></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('get_books') }}">Find a Book</a></li>
+                <li><a href="{{ url_for('add_book') }}">Recommend a Book</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
+            </ul>
         </header>
 
         <section>
@@ -98,9 +97,10 @@
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         {% block scripts %} {% endblock %}
     </body>
 </html>
+

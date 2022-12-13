@@ -37,10 +37,6 @@
     padding-left: 12px !important;
 }
 
-#mobile-demo li a{
-    z-index: 99;
-}
-
 /* ------------------------------------------------------------------------------Home.html*/
 
 .panel-row {
@@ -123,8 +119,5 @@ main {
         text-align: center;
         margin-top: 2px;
         }
-    
-    .copyright {
-        font-size: x-small;
-    }
+
 }
