@@ -43,6 +43,7 @@
     display: flex;
 }
 
+
 /* ------------------------------------------------------------------------------Profile.html*/
 
 .book-row {
@@ -68,6 +69,10 @@ footer a {
     font-size: x-large;
 }
 
+.footer-elements {
+    display: inline-block;
+}
+
 .list-inline {
     padding-left: 0;
     margin: -10px 0 -10px -5px;
@@ -87,4 +92,31 @@ body {
 
 main {
     flex: 1 0 auto;
+}
+
+
+/* ------------------------------------------------------------------------------Media Queries*/
+
+/* adjusting home screen card sizes and layout for smaller screens */
+@media (max-width: 600px) {
+    .panel-row {
+        display:inline-block;
+        }
+}
+
+/* adjusting footer layout for smaller screens */
+@media (max-width: 600px) {
+
+    .footer-elements {
+        text-align: center;
+        }
+    
+    .footer-elements ul {
+        text-align: center;
+        margin-top: 2px;
+        }
+    
+    .copyright {
+        font-size: x-small;
+    }
 }
