@@ -121,3 +121,11 @@ main {
         }
 
 }
+
+/* adjusting buttons on edit book page for small screens */
+@media (max-width: 600px) {
+
+    .edit-book-buttons {
+        margin: 10px;
+        }
+}
