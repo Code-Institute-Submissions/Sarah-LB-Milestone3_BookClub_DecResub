@@ -25,13 +25,9 @@
     <!--Other user reviews-->
     <div class="col s12 card-panel grey lighten-5">
       <div class="row">
-        <!--rating-->
-        <div class="input-field col s12 star_rating">
-          <div id="rateYo" name="rateYo" class="amber-text"></div>
-          <input type="hidden" name="rating" id="rating" value="{{ review.rating }}">
-        </div>
         <!--reviewed by-->
-        <h6 class="amber-text col s12"><strong>{{ review.review_by }}</strong></h6>
+        <h5 class="amber-text col s12"><strong>{{ review.review_by }}</strong></h5>
+        <div class="col s12"><strong>{{ review.review_by }}'s rating: {{ review.rating }}/5</strong></div>
       </div>
       <div class="row">
         <!--review content-->
@@ -46,15 +42,18 @@
   {% endfor %}
   <!--Add your own review-->
   <div class="col s12 card-panel grey lighten-5">
-  <h5 class="amber-text">Add your own review of {{ book.book_title }}</h5>
-  <form class="col s12" method="POST" action="{{ url_for('reviews', book_id=book._id) }}">
+    <h5 class="amber-text">Add your own review of {{ book.book_title }}</h5>
+    <form class="col s12" method="POST" action="{{ url_for('reviews', book_id=book._id) }}">
+
       <!--rating-->
-    <div class="row star_rating">
-      <div class="input-field col s12">
-        <div id="rateYo" name="rateYo" class="amber-text"></div>
-        <input type="hidden" name="rating" id="rating" value="0">
+      <div class="row star_rating">
+        <div class="input-field col s12">
+          <div id="rateYo" name="rateYo" class="amber-text"></div>
+          <input type="hidden" name="rating" id="rating" value="0">
+        </div>
       </div>
-    </div>
+
+      <!--review content-->
       <div class="row">
         <div class="input-field col s12">
           <textarea id="review_text" name="review_text" minlength="5"
