@@ -17,7 +17,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 
-mongo= PyMongo(app)
+mongo = PyMongo(app)
 
 
 @app.route("/")
@@ -132,8 +132,8 @@ def add_book():
         book = {
             "book_title": request.form.get("book_title"),
             "book_author": request.form.get("book_author"),
-            "genre": request.form.getlist("genre"),
-            "rating":request.form.get("rating"),
+            "genre": request.form.get("genre"),
+            "rating": request.form.get("rating"),
             "book_description": request.form.get("book_description"),
             "created_by": session["user"],
             "book_cover": request.form.get("book_cover")
