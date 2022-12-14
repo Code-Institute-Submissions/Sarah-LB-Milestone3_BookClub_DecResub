@@ -31,7 +31,7 @@ This is a book review amd recommendation site. It is designed to be responsive a
     -   #### Colour Scheme
         -   The two main colours used are Amber and Indigo.  Amber is a warm and friendly colour, stimulating creativity.  This is balanced by the calmer and more intellectual feel of indigo.
     -   #### Typography
-        -   The Indie Flower font is used for the main headings on eavh page of the site.  It is a friendly cursive font that embodies the relaxed nature of the Book Club.
+        -   The Indie Flower font is used for the main headings on each page of the site.  It is a friendly cursive font that embodies the relaxed nature of the Book Club.
     -   #### Imagery
         -   It was important to keep imagery to a minimum to draw the users' focus to the book cover images.  Font awesome has been used throughout the site to make it easier to use/navigate.
 
@@ -61,7 +61,7 @@ This is a book review amd recommendation site. It is designed to be responsive a
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [JavaScript](https://www.javascript.com/)
--   [Python]https://www.python.org/)
+-   [Python](https://www.python.org/)
 
 ### Frameworks, Libraries & Programs Used
 
@@ -76,11 +76,15 @@ This is a book review amd recommendation site. It is designed to be responsive a
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 1. [Balsamiq:](https://balsamiq.com/)
-    - Balsamiq was used to create the  during the design process.
+    - Balsamiq was used to create the wireframes during the design process.
 1. [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+    - Python web framework.
 1. [MongoDB](https://www.mongodb.com/)
-1. [Materialise:](https://materializecss.com/)
-1. [Werkzeug:](https://werkzeug.palletsprojects.com/en/2.1.x/) for security features. hashing passwords to add security
+    - Database.
+1. [Materialize:](https://materializecss.com/)
+    - A frontend framework used for mainly for layout and styling.
+1. [Werkzeug:](https://werkzeug.palletsprojects.com/en/2.1.x/)
+    - Werzeug was used for security features such as hashing passwords.
 
 ## Testing
 
@@ -97,48 +101,50 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
     1. As a First Time Visitor, I want to easily understand the main purpose of the site.
 
-        1.  The headings on the site are clear and the opening paragraph explains the site's purpose.
+        - The headings on the site are clear and the opening paragraph explains the site's purpose.
 
     2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find recommended books to read.
 
-        2. The navbar is clear and easy to navigate.
+        - The navbar is clear and easy to navigate.
     
     3. As a First Time Visitor, I want to locate social media links to see their followings on social media.
 
-        3.  The social media links are listed in the footer on every page.
+        - The social media links are listed in the footer on every page.
 
 -   #### Returning Visitor Goals
 
     1. As a Returning Visitor, I want to be able to easily find the book I have read and add my own comments and ratings to the database.
 
-        1.  There is a search function clearly displayed at the top of the find a book page and pages have been given clear names based on what they do.
+        - There is a search function clearly displayed at the top of the find a book page and pages have been given clear names based on what they do.
 
     2. As a Returning Visitor, I want to find community links.
 
-        2.  There are social media links in footer of every page.
+        - There are social media links in footer of every page.
 
 -   #### Frequent User Goals
 
     1. As a Frequent User, I want to be able to easily locate my reviews in order to edit or remove these from the database.
 
-        1.  On the profile page, users can find only their reviews with an option to edir or remove.
+        - On the profile page, users can find only their reviews with an option to edir or remove.
 
 -   #### Developer/Site Owner Goals
 
     1. As the Site Owner, I want to provide a book recommendations site where I can earn money on each book purchased via a link from the site.
 
-        1.  This has not been accomplished.  An affiliate link will be added to each review.html page.
+        - This has not been accomplished.  An affiliate link will be added to each review.html page.
 
 ### Further Testing
 
 -   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhoneS & Samsung Galaxy Fold.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Problems Encountered
 
 -   The mobile navbar caused some issues.  The overlay on the dropdown menu was covering the screen content but also the menu itself so nothing could be selected.  I looked at changing the z-indexes but settled on moving the mobile unordered list outside of the div with a class of navbar-fixed.
+
+-   There were issues connecting to the database after 6 months of inactivity.  Unpaused the database which sorted the deployed site but needed to make changes to the connection string in env.py to get it all working locally.
 
 
 ## Deployment
@@ -191,7 +197,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code
 
--    [Materialise:](https://materializecss.com/): Materialize Library used throughout the project.
+-    [Materialize:](https://materializecss.com/): Materialize Library used throughout the project.
 
 -   The Code Institute study material was used heavily for inspiration, especially the mini project and sample README.
 
