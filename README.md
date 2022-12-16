@@ -146,6 +146,9 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   There were issues connecting to the database after 6 months of inactivity.  Unpaused the database which sorted the deployed site but needed to make changes to the connection string in env.py to get it all working locally.
 
+### Known Bugs
+
+-   On some mobile devices, a small arrow is visible outside of the dropdown menus for genre on the "add book" and "edit book" forms and this needs to be used in order to select a genre.  When the dropdown menus are activated using the arrow in the box, an option cannot be selected.
 
 ## Deployment
 
