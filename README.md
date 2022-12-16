@@ -90,9 +90,9 @@ This is a book review amd recommendation site. It is designed to be responsive a
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://validator.w3.org/) - [results]()
+-   [W3C Markup Validator](https://validator.w3.org/) - [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmilestone3-book-club.herokuapp.com%2F)
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [results](static/images/css_validation.png)
--   Lighthouse used for responsiveness, compatability, accessibility  - [results]()
+-   Lighthouse used for responsiveness, compatability, accessibility    - [results](static/images/mobile_lighthouse.png) for mobile and [results](static/images/desktop_lighthouse.png) for desktop
 -   [HTML formatter](https://webformatter.com/html)
 
 ### Testing User Stories from User Experience (UX) Section
@@ -136,7 +136,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ### Further Testing
 
 -   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhoneS & Samsung Galaxy Fold.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhoneSE & Samsung Galaxy Fold.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
@@ -148,7 +148,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### Known Bugs
 
--   On some mobile devices, a small arrow is visible outside of the dropdown menus for genre on the "add book" and "edit book" forms and this needs to be used in order to select a genre.  When the dropdown menus are activated using the arrow in the box, an option cannot be selected.
+-   On the iphoneSE, a small arrow is visible outside of the dropdown menus for genre on the "add book" and "edit book" forms and this needs to be used in order to select a genre.  When the dropdown menus are activated using the arrow in the box, an option cannot be selected.  Other mobile devices appear to be unaffected.
 
 ## Deployment
 
