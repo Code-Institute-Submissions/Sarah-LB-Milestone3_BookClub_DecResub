@@ -6,12 +6,22 @@
 
 <div class="row panel-row">
     <div class="col s12 m5 home_panel card-panel amber lighten-5">
-        <h4>Looking for a book?</h4>
+        <h4 class="center-align">Looking for a book?</h4>
         <h5>Whether you're searching for reviews on a specific book or looking for inspiration, browse our catalogue for recommended books.</h5>
+        <div class="row">
+            <div class="col s4 offset-s4 center-align">
+                <a href="{{ url_for('get_books') }}" class="btn amber"> Find a book </a>
+            </div>
+        </div>
     </div>
     <div class="col s12 m5 offset-m1 home_panel card-panel amber lighten-5">
-        <h4>Read a good book?</h4>
+        <h4 class="center-align">Read a good book?</h4>
         <h5>Recommend your favourite books to other Book Club members! Add the book details and your review to our growing collection of fantastic books.</h5>
+        <div class="row">
+            <div class="col s4 offset-s4 center-align">
+                <a href="{{ url_for('add_book') }}" class="btn amber"> Share a book </a>
+            </div>
+        </div>
     </div>
 </div>
 
