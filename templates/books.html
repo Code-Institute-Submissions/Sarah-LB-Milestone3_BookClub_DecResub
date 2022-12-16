@@ -37,9 +37,9 @@
     </form>
 </div>
 
-<div class="row book_panel book-row">
+<div class="row book_panel book-row left-align">
     {% for book in books %}
-    <div class="col s12 m4 book-col">
+    <div class="col s12 m4 book-col left-align">
         <div class="card-panel book-teaser amber lighten-5">
             <div class="row center">
                 <a href="{{ url_for('reviews', book_id=book._id) }}">
