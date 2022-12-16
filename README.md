@@ -150,6 +150,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   On the iphoneSE, a small arrow is visible outside of the dropdown menus for genre on the "add book" and "edit book" forms and this needs to be used in order to select a genre.  When the dropdown menus are activated using the arrow in the box, an option cannot be selected.  Other mobile devices appear to be unaffected.
 
+-   When editing a book recommendation, the star rating on the form reverts to 1.5 when editing and after submitting but it logs the correctly submitted value in the database and returns it to the book's page.
+
 ## Deployment
 
 ### Heroku

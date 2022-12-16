@@ -1,7 +1,8 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $("#rateYo").rateYo({
-      halfStar: true
+        rating: 1.5,
+        halfStar: true
     });
     $("#rateYo").click(function(){
         $("#rating").val($("#rateYo").rateYo("rating"));
