@@ -90,9 +90,9 @@ This is a book review amd recommendation site. It is designed to be responsive a
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
--   Lighthouse used for responsiveness, compatability, accessibility... etc
+-   [W3C Markup Validator](https://validator.w3.org/) - [results]()
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [results](static/images/css_validation.png)
+-   Lighthouse used for responsiveness, compatability, accessibility  - [results]()
 -   [HTML formatter](https://webformatter.com/html)
 
 ### Testing User Stories from User Experience (UX) Section
