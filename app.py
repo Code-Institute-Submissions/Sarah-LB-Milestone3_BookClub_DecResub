@@ -113,7 +113,10 @@ def profile(username):
 
     if session["user"]:
         books = list(mongo.db.books.find({"created_by": username}))
-        return render_template("profile.html", username=username, books=books)
+        reviews = list(mongo.db.reviews.find({"review_by": username}))
+        return render_template(
+            "profile.html", username=username, books=books, reviews=reviews
+            )
 
     return redirect(url_for("login"))
 
@@ -170,6 +173,7 @@ def delete_book(book_id):
     flash("Book Review Successfully Deleted")
     return redirect(url_for("profile", username=session["user"]))
 
+
 @app.route("/reviews/<book_id>", methods=["GET", "POST"])
 def reviews(book_id):
     if request.method == "POST":
@@ -186,6 +190,29 @@ def reviews(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("reviews.html", book=book, reviews=reviews)
 
+
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    if request.method == "POST":
+        submit = {
+            "review_text": request.form.get("review_text"),
+            "review_by": session["user"],
+            "review_title": request.form.get("review_title"),
+            "rating": request.form.get("rating")
+        }
+        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, { "$set": submit })
+        flash("Your Review Has Been Successfully Updated")
+        return redirect(url_for("profile", username=session["user"]))
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("edit_review.html", review=review)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
+    flash("Your Review Has Been Deleted")
+    return redirect(url_for("profile", username=session["user"]))
 
 
 

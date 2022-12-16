@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+
+<h3 class="page_title amber-text center-align">Edit Your Review</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_review', review_id=review._id) }}">
+        <!--title-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-book prefix amber-text"></i>
+                <input id="review_title" name="review_title" minlength="5" maxlength="100" value="{{ review.review_title}}" type="text" class="validate" required />
+                <label for="review_title">Review Title</label>
+            </div>
+        </div>
+
+        <!--rating-->
+        <div class="row star_rating">
+            <div class="input-field col s12">
+                <i class="fas fa-star prefix amber-text"></i>
+                <div class="col s2 offset-s1">Your Rating:</div>
+                <div id="rateYo" name="rateYo" class="amber-text col s9"></div>
+                <input type="hidden" name="rating" id="rating" value="{{ review.rating }}" />
+            </div>
+        </div>
+
+        <!--review text-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt prefix amber-text"></i>
+                <textarea id="review_text" name="review_text" minlength="5" maxlength="2000" class="materialize-textarea validate" required>
+                {{- review.review_text -}}
+                </textarea>
+                <label for="review_text">Your Review</label>
+            </div>
+        </div>
+
+        <!--submit and cancel button-->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('profile', username=session['user']) }}" class="edit-book-buttons btn-large red text-shadow"> Cancel <i class="fas fa-times-circle"></i> </a>
+                <button class="edit-book-buttons btn-large waves-effect waves-light amber" type="submit">Confirm <i class="fas fa-check-circle"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
